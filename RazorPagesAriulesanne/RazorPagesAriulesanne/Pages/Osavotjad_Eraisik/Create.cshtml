@@ -1,0 +1,57 @@
+﻿@page
+@model RazorPagesAriulesanne.Pages.Osavotjad.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Eraisik</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Eraisik.Eesnimi" class="control-label"></label>
+                <input asp-for="Eraisik.Eesnimi" class="form-control" />
+                <span asp-validation-for="Eraisik.Eesnimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eraisik.Perekonnanimi" class="control-label"></label>
+                <input asp-for="Eraisik.Perekonnanimi" class="form-control" />
+                <span asp-validation-for="Eraisik.Perekonnanimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eraisik.Isikukood" class="control-label"></label>
+                <input asp-for="Eraisik.Isikukood" class="form-control" />
+                <span asp-validation-for="Eraisik.Isikukood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eraisik.Maksmisviis" class="control-label"></label>
+                <select asp-for="Eraisik.Maksmisviis" class="form-control"/>
+                    <option value="">vali maksmisviis</option>
+                    <option value="pangaülekanne">pangaülekanne</option>
+                    <option value="sularaha">sularaha</option> </select>
+                <span asp-validation-for="Eraisik.Maksmisviis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eraisik.Lisainfo" class="control-label"></label>
+                <input asp-for="Eraisik.Lisainfo" class="form-control" />
+                <span asp-validation-for="Eraisik.Lisainfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

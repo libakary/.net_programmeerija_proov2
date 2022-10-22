@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesAriulesanne.Pages.Osavotjad_Ettevotja.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ettevotja</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ettevotja.JuriidilineNimi" class="control-label"></label>
+                <input asp-for="Ettevotja.JuriidilineNimi" class="form-control" />
+                <span asp-validation-for="Ettevotja.JuriidilineNimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ettevotja.Registrikood" class="control-label"></label>
+                <input asp-for="Ettevotja.Registrikood" class="form-control" />
+                <span asp-validation-for="Ettevotja.Registrikood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ettevotja.OsavotjateArv" class="control-label"></label>
+                <input asp-for="Ettevotja.OsavotjateArv" class="form-control" />
+                <span asp-validation-for="Ettevotja.OsavotjateArv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ettevotja.Maksmisviis" class="control-label"></label>
+                <input asp-for="Ettevotja.Maksmisviis" class="form-control" />
+                <span asp-validation-for="Ettevotja.Maksmisviis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ettevotja.Lisainfo" class="control-label"></label>
+                <input asp-for="Ettevotja.Lisainfo" class="form-control" />
+                <span asp-validation-for="Ettevotja.Lisainfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

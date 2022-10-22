@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesAriulesanne.Pages.Uritused.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Uritus[0].UrituseNimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uritus[0].Toimumisaeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uritus[0].Toimumiskoht)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uritus[0].Lisainfo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Uritus) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrituseNimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toimumisaeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toimumiskoht)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lisainfo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.UritusID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.UritusID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.UritusID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

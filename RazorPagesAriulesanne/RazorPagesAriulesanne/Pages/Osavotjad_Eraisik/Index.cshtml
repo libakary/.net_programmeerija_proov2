@@ -1,0 +1,60 @@
+﻿@page
+@model RazorPagesAriulesanne.Pages.Osavotjad.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eraisik[0].Eesnimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eraisik[0].Perekonnanimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eraisik[0].Isikukood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eraisik[0].Maksmisviis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eraisik[0].Lisainfo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Eraisik) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eesnimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Perekonnanimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isikukood)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maksmisviis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lisainfo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EraisikID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EraisikID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EraisikID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
